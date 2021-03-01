@@ -28,13 +28,19 @@
 #include "system.h"
 #include "debug.h"
 
+
 static void stat_main(void)
 {
+    uint16_t stack_size = SYSTEM_get_stack_size();
+    uint16_t stack_left = SYSTEM_get_stack_left();
+    uint16_t usage = ((stack_size - stack_left)*100)/stack_size;
+    DEBUG(DL_ERROR, "Stack size %dB Left: %dB Usage %d%%\n",
+            stack_size, stack_left, usage);
 }
 
 void STAT_initialize(void)
 {
-    int8_t ret = SYSTEM_register_task(stat_main, 1000);
+    int8_t ret = SYSTEM_register_task(stat_main, 5000);
 
     (void) ret;
     ASSERT(ret == 0);
