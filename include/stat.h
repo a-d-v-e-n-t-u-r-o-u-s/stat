@@ -24,6 +24,6 @@
 #ifndef STAT_H
 #define STAT_H
 
-void WIRE_MGR_initialize(void);
+void STAT_initialize(void);
 
 #endif
