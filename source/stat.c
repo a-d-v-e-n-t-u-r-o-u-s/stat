@@ -21,11 +21,21 @@
  *
  */
 #define DEBUG_APP_ID    "STAT"
-#define DEBUG_ENABLED   DEBUG_1WIRE_MGR_ENABLED
-#define DEBUG_LEVEL     DEBUG_1WIRE_MGR_LEVEL
+#define DEBUG_ENABLED   DEBUG_STAT_ENABLED
+#define DEBUG_LEVEL     DEBUG_STAT_LEVEL
 
 #include "stat.h"
+#include "system.h"
+#include "debug.h"
+
+static void stat_main(void)
+{
+}
 
 void STAT_initialize(void)
 {
+    int8_t ret = SYSTEM_register_task(stat_main, 1000);
+
+    (void) ret;
+    ASSERT(ret == 0);
 }
