@@ -28,6 +28,7 @@
 #include "system.h"
 #include "debug.h"
 
+#define TASK_PERIOD         (5000u)
 
 static void stat_main(void)
 {
@@ -43,5 +44,5 @@ static void stat_main(void)
 
 void STAT_initialize(void)
 {
-    SYSTEM_register_task(stat_main, 5000);
+    SYSTEM_register_task(stat_main, TASK_PERIOD);
 }
