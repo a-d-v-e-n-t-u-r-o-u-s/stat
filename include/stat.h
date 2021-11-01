@@ -24,6 +24,20 @@
 #ifndef STAT_H
 #define STAT_H
 
+/*!
+ *
+ * \addtogroup stat
+ * \ingroup modules
+ * \brief Statistics module
+ */
+
+/*@{*/
+
+/*!
+ * \brief Initializes statistics module
+ */
 void STAT_initialize(void);
+
+/*@}*/
 
 #endif
